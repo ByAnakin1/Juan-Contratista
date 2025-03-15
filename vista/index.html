@@ -5,56 +5,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Construcción</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<style>
+    a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    }
+</style>
+<body class="bg-gray-200 text-gray-900">
 
-    <!-- Header -->
-<header class="bg-red-700 text-white py-5 shadow-md">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-        <h1 class="text-2xl font-bold">JUAN CONTRATISTA</h1>
+<!-- Header -->
+<header id="header" class="fixed top-0 left-0 w-full z-50 text-white py-1 transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6">
+        <!-- Logo -->
+        <a href="/vista/" class="flex items-center">
+            <img src="img/logo.png" alt="Logo de la empresa" class="w-40 h-16 object-contain">
+        </a>
+
+        <!-- Navegación -->
         <nav>
-            <ul class="flex gap-10 text-lg">
-                <li><a href="#" class="hover:underline">Inicio</a></li>
-                <li><a href="#" class="hover:underline">Proyectos</a></li>
-                <li><a href="#" class="hover:underline">Trabajadores</a></li>
+            <ul class="flex gap-8 text-lg items-center">
+                <li><a href="/vista/" class="hover:text-sky-600 font-bold">INICIO</a></li>
+                <li><a href="/vista/proyectos.html" class="hover:text-sky-600 font-bold">PROYECTOS</a></li>
+                <li><a href="/vista/trabajadores.html" class="hover:text-sky-600 font-bold">TRABAJADORES</a></li>
+                <li><a href="/vista/contact.html" class="hover:text-sky-600 font-bold">CONTACTOS</a></li>
             </ul>
         </nav>
+
+        <!-- Icono de acceso -->
+        <a href="/vista/register.html" class="ml-4">
+            <img src="img/acceso.png" alt="acceso" class="w-10 rounded-full">
+        </a>
     </div>
+    <hr class="w-full h-0.5 bg-gradient-to-r from-transparent via-white to-transparent border-0">
 </header>
+
+    
 
 
 
     <!-- Main Content -->
-    <main class="p-6 max-w-5xl mx-auto">
+    <main class="p-0 max-w-full mx-auto">
         
         <!-- Imagen Destacada -->
-        <section class="bg-white shadow-lg p-5 rounded-lg">
-            <img src="xd.jpg" alt="Trabajadores en obra" class="w-full h-56 object-cover rounded-lg">
-            <h2 class="text-lg font-medium mt-4 text-center text-gray-800">Personal en pleno trabajo</h2>
-        </section>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="/vista/img/banner-1.jpg" alt="Primera diapositiva">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="/vista/img/banner-1.jpg" alt="Segunda diapositiva">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="/vista/img/banner-1.jpg" alt="Tercera diapositiva">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 
         <!-- Tarjetas de Información -->
-        <section class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-5 shadow rounded-lg">
-                <h3 class="font-semibold text-gray-800">Búsqueda de Trabajadores</h3>
-                <p class="text-sm text-gray-600 mt-1">Encuentra información sobre empleados activos en los proyectos.</p>
-                <input type="text" class="w-full p-2 border rounded mt-2 focus:ring-2 focus:ring-red-600 outline-none" placeholder="Buscar trabajador...">
+        <section class="mt-4 grid grid-cols-1 md:grid-cols-1 gap-6 max-w-5xl items-center mx-auto flex justify-center">
+            <section class="relative bg-gray-100 py-16 px-6 lg:px-20 flex items-center">
+                <!-- Imagen de fondo con overlay -->
+                <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('/vista/img/fondo.jpg');"></div>
+            
+                <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl mx-auto">
+                    <!-- Texto principal -->
+                    <div class="lg:w-1/2 text-center lg:text-left ml-30">
+                        <h4 class="text-sm font-semibold text-gray-500 uppercase">Conoce a MORALES SAC.</h4>
+                        <h2 class="text-4xl font-bold text-blue-900 leading-tight mt-2">
+                            Construimos confianza <br> desde hace +20 años
+                        </h2>
+                    </div>
+            
+                    <!-- Estadísticas -->
+                    <div class="lg:w-1/2 space-y-6 ml-60">
+                        <div class="flex items-center space-x-4">
+                            <img src="/vista/img/construccion.png" class="w-10 h-10" alt="Obras">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-900">+619</h3>
+                                <p class="text-gray-600">Obras ejecutadas</p>
+                            </div>
+                        </div>
+            
+                        <div class="flex items-center space-x-4">
+                            <img src="/vista/img/plano.png" class="w-10 h-10" alt="Metros cuadrados">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-900">+6.3 MM M²</h3>
+                                <p class="text-gray-600">Construidos</p>
+                            </div>
+                        </div>
+            
+                        <div class="flex items-center space-x-4">
+                            <img src="/vista/img/contrato.png" class="w-10 h-10" alt="Contratos">
+                            <div>
+                                <h3 class="text-2xl font-bold text-blue-900">+$2,072 MM</h3>
+                                <p class="text-gray-600">En contratos</p>
+                            </div>
+                        </div>
+            
+                        <!-- Botón CTA -->
+                        <a href="/vista/contact.html" class="inline-block mt-4 bg-sky-300 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-sky-600">
+                            Conócenos
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="bg-white p-3 shadow rounded-lg">
+                <h3 class="font-bold text-gray-800">Especializaciones y Roles</h3>
+                <p class="text-sm text-gray-600 mt-2 mb-3">Nuestros profesionales están capacitados en diversas áreas de la construcción, incluyendo:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col">
+                        <img src="/vista/img/ing-civil.jpg" class="h-48 w-full object-cover rounded-t-2xl" alt="Ingeniería civil y estructural">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h5 class="font-semibold text-gray-800">Ingeniería Civil y Estructural</h5>
+                            <p class="text-gray-600 flex-grow">Nuestros ingenieros diseñan y supervisan la construcción de estructuras seguras y eficientes, asegurando la estabilidad y durabilidad de cada proyecto.</p>
+                            <div class="mt-4">
+                                <a href="/trabajadores/ingenieria-civil" class="block bg-sky-300 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 text-center">Ver Trabajadores</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col">
+                        <img src="/vista/img/electricidad.jpg" class="h-48 w-full object-cover rounded-t-2xl" alt="Electricidad y plomería">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h5 class="font-semibold text-gray-800">Electricidad y Plomería</h5>
+                            <p class="text-gray-600 flex-grow">Nuestros técnicos garantizan instalaciones eléctricas y de plomería seguras, optimizando el consumo energético y el flujo de agua en cada obra.</p>
+                            <div class="mt-4">
+                                <a href="/trabajadores/electricidad-plomeria" class="block bg-sky-300 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 text-center">Ver Trabajadores</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col">
+                        <img src="/vista/img/supervisor.jpg" class="h-48 w-full object-cover rounded-t-2xl" alt="Supervisión y seguridad">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h5 class="font-semibold text-gray-800">Supervisión y Seguridad</h5>
+                            <p class="text-gray-600 flex-grow">Especialistas en control de calidad y prevención de riesgos garantizan el cumplimiento de normativas de seguridad en cada construcción.</p>
+                            <div class="mt-4">
+                                <a href="/trabajadores/supervision-seguridad" class="block bg-sky-300 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 text-center">Ver Trabajadores</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl shadow-lg overflow-hidden bg-white flex flex-col">
+                        <img src="/vista/img/albañiles.jpg" class="h-48 w-full object-cover rounded-t-2xl" alt="Albañilería y acabados">
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h5 class="font-semibold text-gray-800">Albañilería y Acabados</h5>
+                            <p class="text-gray-600 flex-grow">Maestros albañiles y especialistas en acabados trabajan con precisión para entregar construcciones con excelente estética y durabilidad.</p>
+                            <div class="mt-4">
+                                <a href="/trabajadores/albanileria-acabados" class="block bg-sky-300 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 text-center">Ver Trabajadores</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white p-5 shadow rounded-lg">
-                <h3 class="font-semibold text-gray-800">Especializaciones y Roles</h3>
-                <p class="text-sm text-gray-600 mt-1">Nuestros profesionales están capacitados en diversas áreas de la construcción, incluyendo:</p>
-                <ul class="text-sm text-gray-700 mt-2 list-disc list-inside">
-                    <li>Ingeniería civil y estructural</li>
-                    <li>Electricidad y plomería</li>
-                    <li>Supervisión y seguridad</li>
-                    <li>Albañilería y acabados</li>
-                </ul>
-            </div>
-            <div class="bg-white p-5 shadow rounded-lg">
+            
+            
+            
+                  
+            <div class="bg-white p-4 shadow rounded-lg">
                 <h3 class="font-semibold text-gray-800">Galería del Personal</h3>
                 <p class="text-sm text-gray-600 mt-1">Imágenes de nuestro equipo en acción, destacando su compromiso y profesionalismo.</p>
                 <div class="mt-8 text-center">
-                    <button class="bg-red-700 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition">Ver</button>
+                    <!-- Gallery -->
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                            class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Boat on Calm Water"
+                        />
+                    
+                        <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+                            class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Wintry Mountain Landscape"
+                        />
+                        </div>
+                    
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+                            class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Mountains in the Clouds"
+                        />
+                    
+                        <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                            class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Boat on Calm Water"
+                        />
+                        </div>
+                    
+                        <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                            class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Waves at Sea"
+                        />
+                    
+                        <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                            class="w-100 shadow-1-strong rounded mb-4"
+                            alt="Yosemite National Park"
+                        />
+                        </div>
+                    </div>
+                    <!-- Gallery -->
+                    <button class="bg-red-700 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition">Ver más</button>
                 </div>
             </div>
         </section>
@@ -69,16 +233,52 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
 
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center text-sm p-4 mt-10">
-        <p>&copy; 2025 Proyecto Construcción. Todos los derechos reservados.</p>
+    <footer class="bg-gray-900 text-gray-400 text-center py-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+            <!-- Logo y Nombre -->
+            <div class="mb-4 md:mb-0">
+                <img src="img/logo.png" alt="Logo" class="w-16 mx-auto md:mx-0">
+                <p class="text-sm mt-2">&copy; 2025 Proyecto Construcción</p>
+            </div>
+    
+            <!-- Enlaces Rápidos -->
+            <nav class="mb-4 md:mb-0">
+                <ul class="flex flex-col md:flex-row gap-4 text-sm">
+                    <li><a href="/vista/" class="hover:text-white">Inicio</a></li>
+                    <li><a href="/vista/proyectos.html" class="hover:text-white">Proyectos</a></li>
+                    <li><a href="/vista/trabajadores.html" class="hover:text-white">Trabajadores</a></li>
+                    <li><a href="/vista/contact.html" class="hover:text-white">Contacto</a></li>
+                </ul>
+            </nav>
+    
+            <!-- Redes Sociales -->
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white"><img src="img/facebook.svg" alt="Facebook" class="w-6"></a>
+                <a href="#" class="hover:text-white"><img src="img/instagram.svg" alt="Instagram" class="w-6"></a>
+                <a href="#" class="hover:text-white"><img src="img/linkedin.svg" alt="LinkedIn" class="w-6"></a>
+            </div>
+        </div>
     </footer>
+    
+    <!-- Script para cambiar el fondo al hacer scroll -->
+    <script>
+        window.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 100) {
+                header.classList.add("bg-sky-300", "bg-opacity-50", "backdrop-blur-md");
+            } else {
+                header.classList.remove("bg-sky-300", "bg-opacity-70", "backdrop-blur-md");
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
